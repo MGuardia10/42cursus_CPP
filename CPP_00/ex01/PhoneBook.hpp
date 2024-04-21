@@ -1,15 +1,18 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#define MAX_CONTACTS 8
+
 /* INCLUDES */
 #include "Contact.hpp"
 
 /* PHONEBOOK CLASS */
 class	PhoneBook {
 	private:
-		Contact contacts[8];
+		Contact contacts[MAX_CONTACTS];
 		size_t	position;
-		size_t	getIndex(void);
+		bool	isFull;
+		size_t	getTotal(void);
 	public:
 		PhoneBook();
 		~PhoneBook();
