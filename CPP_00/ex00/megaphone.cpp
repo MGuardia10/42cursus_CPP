@@ -1,13 +1,12 @@
-#include <iostream> // input output stream: Libreria estandar que nos permite tener entrada y salida de datos
-#include <string>
-//using namespace std; como import en js, sino lo ponemos para llamar a cout deberiamos poner 'std::cout' PROHIBIDO
+#include <iostream>
+// #include <string>
 
 int main(int argc, char **argv)
 {
 	std::string str;
 
 	if (argc == 1)
-		std::cout<<"* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		str = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 	{
 		for (int i = 1; argv[i]; i++) {
@@ -16,7 +15,7 @@ int main(int argc, char **argv)
 			}
 		}
 	}
-	std::cout << str << std::endl; // endl como poner \n (tb se puede poner) imprime por pantalla
+	std::cout << str << std::endl;
 	return 0;
 }
 
