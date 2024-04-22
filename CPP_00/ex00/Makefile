@@ -33,9 +33,9 @@ OBJ_FILES	=	$(SRC:%.cpp=$(OBJ_DIR)%.o)
 all:	$(NAME)
 
 $(NAME): $(OBJ_FILES)
-	@echo "$(BLUE)Compiling megaphone...$(CLEAR)"
+	@echo "$(BLUE)Compiling $(NAME)...$(CLEAR)"
 	$(CC) $(OBJ_FILES) -o $(NAME)
-	@echo "$(GREEN)[megaphone --> OK]\n$(CLEAR)$(GREEN)Success!$(CLEAR)"
+	@echo "$(GREEN)[$(NAME) --> OK]$(CLEAR)"
 
 $(OBJ_DIR)%.o: %.cpp
 	@mkdir -p $(OBJ_DIR)

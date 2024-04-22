@@ -3,7 +3,6 @@
 
 /* INCLUDES */
 #include <iostream>
-#include <string>
 
 /* CONTACT CLASS */
 class	Contact {

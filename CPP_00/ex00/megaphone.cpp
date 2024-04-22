@@ -1,5 +1,4 @@
 #include <iostream>
-// #include <string>
 
 int main(int argc, char **argv)
 {
@@ -18,13 +17,3 @@ int main(int argc, char **argv)
 	std::cout << str << std::endl;
 	return 0;
 }
-
-/*
-Problema de cin: En cuanto encuentra un caracter vacio (espacios, tabulaciones, etc)
-lo asigna a la variable indicada y mantiene en un buffer el resto del input que
-introduce el usuario. Dos alternativas:
-	- gets() -> no respeta el tamaño asignado a la variable, sino que coge todo
-	el input del usuario y utiliza memoria que no se le asigna previamente en caso de overflow
-	- std::cin.getline(var, tamaño, cunado termina) -> si respeta tamaño indicado. Es la mejor
-	opción.
-*/

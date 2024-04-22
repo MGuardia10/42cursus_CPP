@@ -1,6 +1,5 @@
 #include "apb.h"
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 static bool	isFullSpaces(std::string& input) {
 	for (int i = 0; input[i]; i++) {
@@ -40,7 +39,7 @@ static std::string	askInfo(std::string question) {
 		}
 		if ((question.compare("Phone number: ") == 0) && !isValidNumber(input)) {
 			input.clear();
-	continue ;
+			continue ;
 		}
 	}
 	for (int i = 0; input[i]; i++) {

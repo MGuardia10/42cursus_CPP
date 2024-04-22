@@ -34,7 +34,7 @@ public:
 
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal );
-	int		checkAmount( void ) const; // significa que no modificara ningun miembro de la clase en la que esta definida
+	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
 
 
