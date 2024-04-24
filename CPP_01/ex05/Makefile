@@ -2,7 +2,7 @@
 # COMPILER OPTIONS
 ################################################################################
 
-NAME		=	TheJobOfOurDreams
+NAME		=	Harl
 CC			=	g++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
@@ -20,8 +20,8 @@ CLEAR	=		\033[0m
 ################################################################################
 
 # SOURCE
-SRC			=	tests.cpp \
-				Account.cpp
+SRC			=	main.cpp \
+				Harl.cpp
 # OBJECTS
 OBJ_DIR		=	objs/
 OBJ_FILES	=	$(SRC:%.cpp=$(OBJ_DIR)%.o)
@@ -54,3 +54,6 @@ fclean: clean
 re: fclean all
 
 .PHONY:	all clean fclean re
+
+leaks: all
+	@leaks -q --atExit -- ./$(NAME)
