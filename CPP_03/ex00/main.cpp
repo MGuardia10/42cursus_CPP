@@ -3,10 +3,11 @@
 int	main( void ) {
 	{
 		/* Orthodox canonical form test */
-		ClapTrap a( "Pedro" );
+		ClapTrap a;
 		ClapTrap b( a );
-		ClapTrap c = a;
+		ClapTrap c("Juan");
 		ClapTrap d;
+		d = c;
 
 		std::cout << a.getName() << std::endl;
 		std::cout << b.getName() << std::endl;
@@ -27,6 +28,8 @@ int	main( void ) {
 		std::cout << "Energy points: " << a.getEP() << std::endl;
 		std::cout << "Hit Points: " << a.getHP() << std::endl;
 
+		a.attack("");
+
 		for (int i = 0; i < 15; i++) {
 			std::cout << i + 1 << ". ";
 			a.attack("Alvaro");
@@ -42,24 +45,16 @@ int	main( void ) {
 		/* TakeDamage and beRepaired test */
 		ClapTrap a( "Manuel" );
 
-		/* Cannot repair himself because its full HP */
-		a.beRepaired(3);
-
-		/* Take damage until 5 HP */
+		a.beRepaired(3); // Cannot repair bc full HP
+		
 		a.takeDamage(5);
-
-		/* now repair one by one HP */
 		for (int i = 0; i < 7; i++)
-			a.beRepaired(1);
+			a.beRepaired(1); // repair until 10 HP and then throw cannot repair error
 
-		/* Kill Manuel */
-		a.takeDamage(10000);
+		a.takeDamage(10000); // Kill ClapTrap
 
-		/* Try to receive more damage when its dead */
-		a.takeDamage(1);
-
-		/* Try to repair it dead */
-		a.beRepaired(100);
+		a.takeDamage(1); // cannot receive more damage bc is dead
+		a.beRepaired(100); // cannot repair bc is dead
 	}
 	
 	return 0;

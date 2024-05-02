@@ -1,28 +1,21 @@
 #include "ClapTrap.hpp"
 
 /* Orthodox canonical Class */
-ClapTrap::ClapTrap(): hitPoints(10), energyPoints(10), attackDamage(0) {
-	static int	n;
-
-	std::cout << "Default constructor name called" << std::endl;
-	n++;
-	this->name = "unnamed_" + std::to_string(n);
+ClapTrap::ClapTrap(): name("Default"), hitPoints(10), energyPoints(10), attackDamage(0) {
+	std::cout << "Default ClapTrap created" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string _name): name(_name), hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "Constructor with name called" << std::endl;
+	std::cout << this->name << " ClapTrap created" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& other ) {
-
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << other.name << " ClapTrap created with copy constructor" << std::endl;
 	*this = other;
 }
 
 ClapTrap& ClapTrap::operator=( const ClapTrap& other ) {
-
-	std::cout << "Copy assignment operator called" << std::endl;
-
+	
 	if (this != &other) {
 		this->name = other.getName();
 		this->hitPoints = other.getHP();
@@ -30,16 +23,22 @@ ClapTrap& ClapTrap::operator=( const ClapTrap& other ) {
 		this->attackDamage = other.getAD();
 	}
 
+	std::cout << this->name << " ClapTrap created with copy assignment operator" << std::endl;
+
 	return *this;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << this->name << " ClapTrap destroyed" << std::endl;
 }
 
 /* Methods */
 void	ClapTrap::attack(const std::string& target) {
 	
+	if (target.empty()) {
+		std::cout << this->name << " failed to attack, no target specified\n";
+		return ;
+	}
 	if (this->getHP() == 0) {
 		std::cout << this->name << " cannot attack because it has no HP\n";
 		return ;

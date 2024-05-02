@@ -2,7 +2,7 @@
 # COMPILER OPTIONS
 ################################################################################
 
-NAME		=	andOpen
+NAME		=	ClapTrap
 CC			=	g++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
