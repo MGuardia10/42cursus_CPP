@@ -24,5 +24,4 @@ Dog::~Dog() {
 }
 
 /* Public Methods */
-// std::string	Dog::getType() { return this->type; }
 void	Dog::makeSound() const { std::cout << "Wooooff Wooooff" << std::endl; }

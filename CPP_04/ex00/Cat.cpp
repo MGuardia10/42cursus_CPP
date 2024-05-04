@@ -24,5 +24,4 @@ Cat::~Cat() {
 }
 
 /* Public Methods */
-// std::string	Cat::getType() { return this->type; }
 void	Cat::makeSound() const { std::cout << "Meowwwww Meowwwww" << std::endl; }
