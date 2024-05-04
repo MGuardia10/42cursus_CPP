@@ -28,18 +28,22 @@ int main()
 		const WrongAnimal* meta = new WrongAnimal();
 		const Animal* j = new Dog();
 		const WrongAnimal* i = new WrongCat();
+		const WrongCat* k = new WrongCat();
 		
 		std::cout << meta->getType() << " " << std::endl;
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
+		std::cout << k->getType() << " " << std::endl;
 		
 		meta->makeSound();
 		j->makeSound();
 		i->makeSound(); //will output the animal sound (no sound)
+		k->makeSound();
 
 		delete meta;
 		delete j;
 		delete i;
+		delete k;
 	}
 	std::cout << "\n------------------------------------------------------------\n\n";
 	{

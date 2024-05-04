@@ -24,4 +24,4 @@ WrongCat::~WrongCat() {
 }
 
 /* Public Methods */
-void	WrongCat::makeSound() const { std::cout << "No sound sorry" << std::endl; }
+void	WrongCat::makeSound() const { std::cout << "WrongCat sound" << std::endl; }
