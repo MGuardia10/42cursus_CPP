@@ -1,19 +1,20 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 class	Fixed {
 
 	private:
-		int					_rawBits;
-		static int const	_fractionalBits;
+		int					rawBits;
+		static int const	fractionalBits;
 
 	public:
 		Fixed();
 		Fixed( const int nbr );
 		Fixed( const float nbr );
-		Fixed( const Fixed& copy );
-		Fixed& operator=( const Fixed& copy );
+		Fixed( const Fixed& other );
+		Fixed& operator=( const Fixed& other );
 		~Fixed();
 
 		int 	getRawBits( void ) const;
@@ -24,4 +25,4 @@ class	Fixed {
 
 };
 
-std::ostream& operator<<(std::ostream& o, Fixed const& nbr);
+std::ostream& operator<<(std::ostream& op, Fixed const& nbr);
