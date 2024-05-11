@@ -2,7 +2,7 @@
 # COMPILER OPTIONS
 ################################################################################
 
-NAME		=	braiiiiiiinnnzzzZ
+NAME		=	operatorsOverload
 CC			=	g++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
@@ -21,9 +21,8 @@ CLEAR	=		\033[0m
 
 # SOURCE
 SRC			=	main.cpp \
-				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp
+				Fixed.cpp
+
 # OBJECTS
 OBJ_DIR		=	objs/
 OBJ_FILES	=	$(SRC:%.cpp=$(OBJ_DIR)%.o)
