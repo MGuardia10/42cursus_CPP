@@ -88,7 +88,6 @@ int main( void ) {
 			std::cout << "a is bigger or equal to b" << std::endl;
 		if ( a <= b )
 			std::cout << "a is smaller or equal to b" << std::endl;
-		
 	}
 
 	return 0;
