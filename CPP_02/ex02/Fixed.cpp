@@ -3,46 +3,35 @@
 const int Fixed::fractionalBits = 8;
 
 /* Orthodox Canonical Class Form */
-Fixed::Fixed(): rawBits(0) {
-	// std::cout << "Default constructor called" << std::endl;
-}
+Fixed::Fixed(): rawBits(0) {}
 
 Fixed::Fixed( const int nbr ) {
-	// std::cout << "INT constructor called" << std::endl;
 	this->rawBits = (nbr << fractionalBits);
 }
 
 Fixed::Fixed( const float nbr ) {
-	// std::cout << "FLOAT constructor called" << std::endl;
 	this->rawBits = roundf( nbr * (1 << fractionalBits) );
 }
 
 Fixed::Fixed( const Fixed &copy ) {
-	// std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Fixed& Fixed::operator=( const Fixed& other ) {
-	
-	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
         rawBits = other.getRawBits();
     
 	return *this;
 }
 
-Fixed::~Fixed() {
-	// std::cout << "Destructor called" << std::endl;
-}
+Fixed::~Fixed() {}
 
 /* Getters & Setters */
 int Fixed::getRawBits( void ) const {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return this->rawBits;
 }
 
 void Fixed::setRawBits( int const raw ) {
-	// std::cout << "setRawBits member function called" << std::endl;
 	this->rawBits = raw;
 }
 
