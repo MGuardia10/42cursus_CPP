@@ -56,9 +56,9 @@ int main( void ) {
 		std::cout << "b value: " << b << std::endl << std::endl;
 
 		if ( a != b )
-			std::cout << "a and c are different" << std::endl;
+			std::cout << "a and b are different" << std::endl;
 		if ( a == b )
-			std::cout << "a and c are equal" << std::endl;
+			std::cout << "a and b are equal" << std::endl;
 		if ( a > b )
 			std::cout << "a is bigger than b" << std::endl;
 		if ( a < b )
@@ -77,9 +77,9 @@ int main( void ) {
 		std::cout << "b value: " << b << std::endl << std::endl;
 
 		if ( a != b )
-			std::cout << "a and c are different" << std::endl;
+			std::cout << "a and b are different" << std::endl;
 		if ( a == b )
-			std::cout << "a and c are equal" << std::endl;
+			std::cout << "a and b are equal" << std::endl;
 		if ( a > b )
 			std::cout << "a is bigger than b" << std::endl;
 		if ( a < b )
