@@ -4,14 +4,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-/* TODO 
-	- testear OCCF, executeForm de burocrata, execute AForm, 
-	- ShrubberyCreationForm -> Required grades: 
-	- RobotomyRequestForm -> Required grades: sign 72, exec 45
-	- PresidentialPardonForm ->  Required grades: sign 25, exec 5
-	- En bureaucrat -> void executeForm(AForm const & form);
-*/
-
 int	main( void ) {
 	{
 		/* Abstract Class test */
