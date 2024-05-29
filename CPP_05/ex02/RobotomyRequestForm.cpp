@@ -1,9 +1,9 @@
 #include "RobotomyRequestForm.hpp"
 
 /* OCCF*/
-RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy_form", "Default_target", SIGN_ROBOTOMY, EXEC_ROBOTOMY) {}
+RobotomyRequestForm::RobotomyRequestForm(): AForm("robotomy request form", "Default_target", SIGN_ROBOTOMY, EXEC_ROBOTOMY) {}
 
-RobotomyRequestForm::RobotomyRequestForm( const std::string _target ): AForm("Robotomy_form", _target, SIGN_ROBOTOMY, EXEC_ROBOTOMY) {}
+RobotomyRequestForm::RobotomyRequestForm( const std::string _target ): AForm("robotomy request form", _target, SIGN_ROBOTOMY, EXEC_ROBOTOMY) {}
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm& other ): AForm(other.getName(), other.getTarget(), other.getSignGrade(), other.getExecGrade()) {}
 

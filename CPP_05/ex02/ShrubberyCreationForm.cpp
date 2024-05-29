@@ -1,9 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
 /* OCCF*/
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery_form", "Default_target", SIGN_SHRUBBERY, EXEC_SHRUBBERY) {}
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("shrubbery creation form", "Default_target", SIGN_SHRUBBERY, EXEC_SHRUBBERY) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm( const std::string _target ): AForm("Shrubbery_form", _target, SIGN_SHRUBBERY, EXEC_SHRUBBERY) {}
+ShrubberyCreationForm::ShrubberyCreationForm( const std::string _target ): AForm("shrubbery creation form", _target, SIGN_SHRUBBERY, EXEC_SHRUBBERY) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm& other ): AForm(other.getName(), other.getTarget(), other.getSignGrade(), other.getExecGrade()) {}
 

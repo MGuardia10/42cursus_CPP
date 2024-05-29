@@ -1,9 +1,9 @@
 #include "PresidentialPardonForm.hpp"
 
 /* OCCF*/
-PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardon_form", "Default_target", SIGN_PRESIDENTIAL, EXEC_PRESIDENTIAL) {}
+PresidentialPardonForm::PresidentialPardonForm(): AForm("presidential pardon form", "Default_target", SIGN_PRESIDENTIAL, EXEC_PRESIDENTIAL) {}
 
-PresidentialPardonForm::PresidentialPardonForm( const std::string _target ): AForm("PresidentialPardon_form", _target, SIGN_PRESIDENTIAL, EXEC_PRESIDENTIAL) {}
+PresidentialPardonForm::PresidentialPardonForm( const std::string _target ): AForm("presidential pardon form", _target, SIGN_PRESIDENTIAL, EXEC_PRESIDENTIAL) {}
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm& other ): AForm(other.getName(), other.getTarget(), other.getSignGrade(), other.getExecGrade()) {}
 
