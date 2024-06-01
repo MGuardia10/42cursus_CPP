@@ -33,7 +33,6 @@ int	main( void ) {
 			std::cout << '\n' << *FormA << '\n';
 
 			bureaucratA.signForm( *FormA );
-
 			for (int i = 0; i < 5; i++)
 				bureaucratA.executeForm( *FormA );
 			
@@ -55,7 +54,6 @@ int	main( void ) {
 			std::cout << '\n' << *FormA << '\n';
 
 			bureaucratA.signForm( *FormA );
-
 			bureaucratA.executeForm( *FormA );
 
 			delete FormA;
@@ -95,7 +93,7 @@ int	main( void ) {
 
 			bureaucratA.signForm( *FormA );
 			bureaucratA.executeForm( *FormA );
-			
+
 			delete FormA;
 
 		} catch (std::exception & e) {
