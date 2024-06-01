@@ -68,7 +68,6 @@ int main( void ) {
 	    std::cout << "Array after to_upper:\n";
 		iter(Array, length, printArray<char>);
 	}
-
-
+	
 	return 0;
 }
