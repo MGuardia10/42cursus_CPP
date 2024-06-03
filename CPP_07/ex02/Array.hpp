@@ -34,7 +34,7 @@ class Array {
 
 		// operator []
 		T& operator[]( size_t index ) {
-			if ( index > length)
+			if ( index >= length)
 				throw std::out_of_range("Index is out of range");
 
 			return this->arr[index];

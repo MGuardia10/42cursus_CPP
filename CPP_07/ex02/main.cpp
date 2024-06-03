@@ -43,7 +43,11 @@ int main( void ) {
 			}
 
 			// access to invalid index -1:
-			a[-1] = 5;
+			a[-1] = 10;
+
+			for (int i = 0; i < n; i++) {
+			std::cout << a[i] << '\n';
+			}
 			
 		} catch (std::exception& e) {
 			std::cout << e.what() << '\n';
