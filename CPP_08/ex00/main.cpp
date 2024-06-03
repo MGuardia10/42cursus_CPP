@@ -65,9 +65,9 @@ int main( void ) {
 		/* deque -> double-ended queue */
 		try {
 			int arr[] = {8, 4, 5, 9, 17, 86};
-			std::deque<int> myForwardList(arr, arr + sizeof(arr) / sizeof(arr[0]));
+			std::deque<int> myDeque(arr, arr + sizeof(arr) / sizeof(arr[0]));
 
-			std::deque<int>::iterator it = easyfind(myForwardList, 8);
+			std::deque<int>::iterator it = easyfind(myDeque, 8);
 			std::cout << "Found element: " << *it << std::endl;
 
 		} catch (std::exception & e) {
@@ -79,7 +79,7 @@ int main( void ) {
 		/* Error example */
 		try {
 			int arr[] = {8, 4, 5, 9, 17, 86};
-			std::vector<int> myVector(arr, arr+ sizeof(arr) / sizeof(arr[0]));
+			std::vector<int> myVector(arr, arr + sizeof(arr) / sizeof(arr[0]));
 
 			std::vector<int>::iterator it = easyfind(myVector, 1241354);
 			std::cout << "Found element: " << *it << std::endl;
