@@ -1,5 +1,6 @@
 #include "MutantStack.hpp"
 #include <list>
+#include <vector>
 
 int main ( void ) {
 	{
@@ -25,6 +26,7 @@ int main ( void ) {
 
 		++it;
 		--it;
+		
 		while (it != ite) {
 			std::cout << *it << std::endl;
 			++it;
@@ -32,7 +34,7 @@ int main ( void ) {
 	}
 	std::cout << "----------------------------------------------------\n";
 	{
-		/* Main from subject */
+		/* comparison with list */
 		std::list<int> mList;
 
 		mList.push_front(5);
@@ -54,13 +56,41 @@ int main ( void ) {
 
 		++it;
 		--it;
+
 		while (it != ite) {
 			std::cout << *it << std::endl;
 			++it;
 		}
+	}
+	std::cout << "----------------------------------------------------\n";
+	{
+		/* Using MutantStack with another container -> Vector */
+		MutantStack< int, std::vector<int> > mstack;
 
-		std::list<int> s(mList);
-		// imprimir list
+		mstack.push(5);
+		mstack.push(17);
+
+		std::cout << mstack.top() << std::endl;
+		
+		mstack.pop();
+		
+		std::cout << mstack.size() << std::endl;
+		
+		mstack.push(3);
+		mstack.push(5);
+		mstack.push(737);
+		mstack.push(0);
+
+		MutantStack< int, std::vector<int> >::iterator it = mstack.begin();
+		MutantStack< int, std::vector<int> >::iterator ite = mstack.end();
+
+		++it;
+		--it;
+
+		while (it != ite) {
+			std::cout << *it << std::endl;
+			++it;
+		}
 	}
 
 	return 0;
