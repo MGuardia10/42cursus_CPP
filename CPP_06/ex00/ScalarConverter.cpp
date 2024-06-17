@@ -10,80 +10,100 @@ ScalarConverter& ScalarConverter::operator=( const ScalarConverter& other ) {
 ScalarConverter::~ScalarConverter() {}
 
 /* converter */
-static inline bool isChar( std::string input ) {
-	return (input.length() == 1 && !std::isdigit( static_cast<int>(input[0]) ));
-}
 
-static bool isInt( std::string input ) {
-	try {
-		std::size_t pos;
-		long long number = std::stoll(input, &pos);
-		static_cast<void>(number);
-		return pos == input.length();
-	} catch (std::out_of_range & e) {
-		// gestionar valores fuera de rango
-		std::cout << "outofrange\n";
-		return false;
-	} catch (std::invalid_argument&) {
-		return false;
+static void	printChar( int c ) {
+	std::cout << "char: ";
+	if (c >= CHAR_MIN && c <= CHAR_MAX) {
+		std::isprint( c ) ? std::cout << '\'' << static_cast<char>( c ) << "\'\n" : std::cout << "Non displayable.\n";
+	} else {
+		std::cout << "impossible.\n";
 	}
 }
 
-static bool isFloat( std::string input ) {
-	try {
-        std::size_t pos;
-        double number = std::stod(input, &pos);
-		static_cast<void>(number);
-		return (pos == input.length() - 1) && input.at(pos) == 'f';
-    } catch (std::invalid_argument&) {
-        return false;
-    } catch (std::out_of_range&) {
-        return false;
-    }
+/* CHAR case */
+static void	charCase( char input ) {
+	printChar( static_cast<int>(input) );
+	std::cout << "int: " << static_cast<int>( input ) << '\n';
+	std::cout << "float: " << static_cast<float>( input ) << ".0f\n";
+	std::cout << "double: " << static_cast<double>( input ) << ".0\n";
+
 }
 
-static bool isDouble( std::string input ) {
-	try {
-        std::size_t pos;
-        double number = std::stod(input, &pos);
-		static_cast<void>(number);
-		return pos == input.length();
-    } catch (std::invalid_argument&) {
-        return false;
-    } catch (std::out_of_range&) {
-        return false;
-    }
+/* INT case */
+// static void	intCase(  ) {
+	
+// }
+
+/* FLOAT case */
+// static void	floatCase(  ) {
+	
+// }
+
+/* DOUBLE case */
+// static void	doubleCase(  ) {
+	
+// }
+
+static scalarType findType( char *input ) {
+	/*
+		CHAR conditions:
+		- input length == 1.
+		- character is not a digit.
+	*/
+	if (strlen(input) == 1 && !std::isdigit( static_cast<int>(input[0]) ))
+		return CHAR;
+	
+	/*
+		INT conditions:
+		- inputEnd == NULL.
+		- input length <= 11 -> max amount of numbers to fit in a INT type.
+		- nbr must fit between INT_MIN & INT_MAX macros.
+	*/
+	char *inputEnd = NULL;
+	long nbr = strtol(input, &inputEnd, 10);
+
+	if (!inputEnd[0] && (strlen(input) <= 11) && nbr >= INT_MIN && nbr <= INT_MAX)
+		return INT;
+
+	/*
+		DOUBLE conditions:
+		- inputEnd == NULL.
+
+		FLOAT conditions:
+		- inputEnd == "f".
+	*/
+	inputEnd = NULL;
+	strtod(input, &inputEnd);
+
+	if (!inputEnd[0])
+		return DOUBLE;
+	if (strcmp(inputEnd, "f") == 0)
+		return FLOAT;
+
+	return ERROR;
 }
 
-void	print_char( double c ) {
-	std::cout << "char: ";
-	if (c >= 0 && c <= 255) {
-		unsigned char cc = static_cast<unsigned char>( c );
-		std::isprint( cc ) ? std::cout << '\'' << cc << "\'\n" : std::cout << "Non displayable.\n";
-	} else
-		std::cout << "impossible.\n";
-}
+void	ScalarConverter::convert( char *input ) {
 
-void	ScalarConverter::convert( std::string input ) {
-
-	if (isChar( input )) {
-		std::cout << "char\n";
-		print_char( static_cast<char>(input[0]) );
-		// print_int();
-		// print_float();
-		// print_double();
-	} else if (isInt( input )) {
-		std::cout << "int\n";
-		print_char( std::stoi( input ) );
-		// int_case()
-	} else if (isFloat( input )) {
-		std::cout << "float\n";
-		print_char( std::stof( input ) );
-		// float_case();
-	} else if (isDouble( input )) {
-		std::cout << "double\n";
-		print_char( std::stod( input ) );
-		// double_case();
-	} else
-		std::cerr << "Impossible to convert\n";
+	switch (findType( input )) {
+		case CHAR:
+			std::cout << "char\n";
+			charCase(static_cast<char>(input[0]));
+			break;
+		case INT:
+			std::cout << "int\n";
+			// intCase();
+			break;
+		case FLOAT:
+			std::cout << "float\n";
+			// floatCase();
+			break;
+		case DOUBLE:
+			std::cout << "double\n";
+			// doubleCase();
+			break;
+		default:
+			std::cerr << "impossible to convert" << std::endl;
+			break;
+	}
 }

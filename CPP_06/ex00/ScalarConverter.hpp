@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <cstdlib>
+#include <climits>
 
 enum	scalarType {
 	CHAR,
@@ -18,5 +20,5 @@ class	ScalarConverter {
 
 	public:
 		ScalarConverter& operator=( const ScalarConverter& other );
-		static void convert( std::string literal );
+		static void convert( char *literal );
 };
