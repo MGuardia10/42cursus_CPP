@@ -26,7 +26,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	for (int i = 0; i < 3; i++)
 		std::cout << "Brrrrr...\n";
 
-	std::srand(static_cast<unsigned int>(std::time(0))); // evitar que cada ejecucion genere misma secuencia de nums random
+	std::srand(static_cast<unsigned int>(time(0))); // evitar que cada ejecucion genere misma secuencia de nums random
 
 	if (std::rand() % 2 == 0)
 		std::cout << this->getTarget() << " has been successfully robotomized!\n";

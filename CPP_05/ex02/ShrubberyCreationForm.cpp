@@ -23,7 +23,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (executor.getGrade() > this->getExecGrade())
 		throw AForm::GradeTooLowException(); // error de no exec grade
 	
-	std::ofstream	file(this->getTarget() + "_shrubbery", std::ios::out | std::ios::trunc);
+	std::ofstream file((this->getTarget() + "_shrubbery").c_str(), std::ios::out | std::ios::trunc);
+
 
 	if (!file.is_open()) {
 		throw ShrubberyCreationForm::FileNotOpenException();
