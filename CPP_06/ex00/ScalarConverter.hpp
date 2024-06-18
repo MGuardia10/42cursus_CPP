@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <climits>
+#include <cmath>
 
 enum	scalarType {
 	CHAR,
