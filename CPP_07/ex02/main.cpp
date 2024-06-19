@@ -1,7 +1,8 @@
 #include "Array.hpp"
+#include <cstdlib>
 
 int main( void ) {
-	std::srand(static_cast<unsigned int>(std::time(0)));
+	srand(static_cast<unsigned int>(time(0)));
 	{
 		/* OCCF and empty array test */
 		Array<int> a;
@@ -22,7 +23,7 @@ int main( void ) {
 		Array<int> a(n);
 
 		for (int i = 0; i < n; i++) {
-			int random = std::rand();
+			int random = rand();
 			a[i] = random;
 		}
 
@@ -38,7 +39,7 @@ int main( void ) {
 			Array<int> a(n);
 
 			for (int i = 0; i < n; i++) {
-				int random = std::rand();
+				int random = rand();
 				a[i] = random;
 			}
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <cstdint> // uintptr_t
+#include <stdint.h> // uintptr_t, <cstdint> not supported in c++98
 #include "Data.hpp"
 
 class Serializer {

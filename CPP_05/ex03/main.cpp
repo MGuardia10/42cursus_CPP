@@ -2,7 +2,7 @@
 
 int	main( void ) {
 	/* evitar en Robotomy Request que se genere la misma secuencia siempre */
-	std::srand(static_cast<unsigned int>(std::time(0)));
+	std::srand(static_cast<unsigned int>(time(0)));
 	
 	{
 		/* Shrubbery creation form test */

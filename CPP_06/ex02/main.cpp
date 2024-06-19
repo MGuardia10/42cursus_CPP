@@ -37,21 +37,21 @@ static void identify(Base& p) {
 		std::cout << "Reference is type A\n";
 		(void)a;
 		return ;
-	} catch (const std::bad_cast & e) {}
+	} catch (const std::exception & e) {}
 
 	try {
 		B &b = dynamic_cast<B&>( p );
 		std::cout << "Reference is type B\n";
 		(void)b;
 		return ;
-	} catch (const std::bad_cast & e) {}
+	} catch (const std::exception & e) {}
 
 	try {
 		C &c = dynamic_cast<C&>( p );
 		std::cout << "Reference is type C\n";
 		(void)c;
 		return ;
-	} catch (const std::bad_cast & e) {}
+	} catch (const std::exception & e) {}
 	
 	std::cout << "Cannot identify reference type\n";
 }

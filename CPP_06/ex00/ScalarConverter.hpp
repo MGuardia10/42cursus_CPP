@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <cstdlib>
+#include <cstring>
 #include <climits>
 #include <cmath>
 
