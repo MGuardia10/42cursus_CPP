@@ -5,10 +5,9 @@ std::stack<double> RPN::myStack;
 
 /* OCCF */
 RPN::RPN() {}
-RPN::RPN( const RPN& other ) { *this = other; }
+RPN::RPN( const RPN& other ) { (void) other; }
 RPN& RPN::operator=( const RPN& other ) {
-	if (this != &other)
-		myStack = other.myStack;
+	(void) other;
 	return *this;
 }
 RPN::~RPN() {}
