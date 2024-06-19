@@ -2,7 +2,7 @@
 # COMPILER OPTIONS
 ################################################################################
 
-NAME		=	reversePolishNotation
+NAME		=	RPN
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
@@ -57,4 +57,4 @@ re: fclean all
 .PHONY:	all clean fclean re
 
 leaks: all
-	@leaks -q --atExit -- ./$(NAME)
+	@leaks -q --atExit -- ./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
