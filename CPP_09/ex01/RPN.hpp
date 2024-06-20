@@ -38,5 +38,4 @@ class RPN {
 
 		/* exposed methods */
 		static void calculate( std::string input );
-		static void printResult( void );
 };

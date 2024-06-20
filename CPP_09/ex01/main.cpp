@@ -11,7 +11,6 @@ int main( int argc, char **argv ) {
 
 	try {
 		RPN::calculate( argv[1] );
-		RPN::printResult();
 
 	} catch (std::exception& e) {
 		std::cout << RED << e.what() << RESET << '\n';

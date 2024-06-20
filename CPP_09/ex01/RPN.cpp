@@ -67,13 +67,16 @@ void RPN::calculate( std::string input ) {
 
 		it++;
 	}
-}
 
-/* print result */
-void RPN::printResult( void ) {
 	if (myStack.size() == 1) {
 		std::cout << myStack.top() << '\n';
 		myStack.pop();
-	} else
+	} else {
+		while (myStack.size() != 0) {
+			myStack.pop();
+		}
+
 		throw RPN::wrongInputException();
+	}
+
 }
