@@ -3,10 +3,13 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <cstdlib>
+
+#define WHITESPACES 	" \t\n\v\f\r"
 
 class BitcoinExchange {
 	private:
-		std::map<std::string, float> dataBase;
+		std::map<std::string, double> dataBase;
 
 		/* exceptions */
 		class openingDataBaseException : public std::exception {
