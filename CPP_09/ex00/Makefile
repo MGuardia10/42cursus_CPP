@@ -21,7 +21,7 @@ CLEAR	=		\033[0m
 
 # SOURCE
 SRC			=	main.cpp \
-				Bitcoin.cpp
+				BitcoinExchange.cpp
 				
 # OBJECTS
 OBJ_DIR		=	objs/
