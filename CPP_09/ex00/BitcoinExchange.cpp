@@ -95,7 +95,7 @@ void BitcoinExchange::setDataBase( const char *pathDB ) {
 void BitcoinExchange::calculate( const std::string pathFile ) {
 	
 	/* open file */
-	std::ifstream	file( pathFile );
+	std::ifstream	file( pathFile.c_str() );
 
 	if ( file.fail() ) {
 		throw BitcoinExchange::openingFileException();
