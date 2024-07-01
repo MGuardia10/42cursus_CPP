@@ -1,7 +1,7 @@
 #include "BitcoinExchange.hpp"
 
 /* OCCF */
-BitcoinExchange::BitcoinExchange() : dataBase() {}  //mirar
+BitcoinExchange::BitcoinExchange() : dataBase() {}
 BitcoinExchange::BitcoinExchange( const char *pathDB ) : dataBase() { this->setDataBase( pathDB ); }
 BitcoinExchange::BitcoinExchange( const BitcoinExchange& other ) { *this = other; }
 BitcoinExchange& BitcoinExchange::operator=( const BitcoinExchange& other ) {
@@ -102,8 +102,7 @@ void BitcoinExchange::calculate( const std::string pathFile ) {
 	}
 
 	std::string content;
-	/* dividir por "|" y parsear fecha y numero: fecha valida, numero entre 0 y 1000 */
-	std::getline( file, content ); // header
+	std::getline( file, content ); // take header
 	while (std::getline( file, content )) {
 		/* find '|' */
 		size_t pos = content.find('|');
@@ -155,7 +154,3 @@ void BitcoinExchange::calculate( const std::string pathFile ) {
 
 	}
 }
-
-
-
-
