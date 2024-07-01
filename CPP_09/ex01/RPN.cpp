@@ -34,7 +34,7 @@ void RPN::calculate( std::string input ) {
 		
 		if ( std::isdigit( *it ) ) {
 			myStack.push( static_cast<double>( *it - '0' ) );
-		} else if ( (op = std::strchr( "+-/*", *it )) != nullptr ) {
+		} else if ( (op = std::strchr( "+-/*", *it )) != NULL ) {
 
 			if (myStack.size() < 2)
 				throw RPN::wrongInputException();
