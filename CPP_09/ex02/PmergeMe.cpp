@@ -5,8 +5,16 @@ PmergeMe::PmergeMe() : myVector(), myList(), myVectorTime(0), myListTime(0) {}
 PmergeMe::PmergeMe(char **argv) : myVectorTime(0), myListTime(0) {
 	this->setContainers( argv );
 }
-// PmergeMe::PmergeMe( const PmergeMe& other ) {}
-// PmergeMe& PmergeMe::operator=( const PmergeMe& other ) {}
+PmergeMe::PmergeMe( const PmergeMe& other ) { *this = other; }
+PmergeMe& PmergeMe::operator=( const PmergeMe& other ) {
+	if (this != &other) {
+		this->myList = other.myList;
+		this->myVector = other.myVector;
+		this->myVectorTime = other.myVectorTime;
+		this->myListTime = other.myListTime;
+	}
+	return *this;
+}
 PmergeMe::~PmergeMe() {}
 
 /* Public methods */
@@ -39,25 +47,25 @@ void	PmergeMe::sort( void ) {
     }
 
 	std::clock_t end = std::clock();
-	this->myVectorTime = static_cast<double>(end -start);
+	this->myVectorTime = static_cast<double>(end -start) / CLOCKS_PER_SEC;
 
 	/* List time */
 	start = std::clock();
 
-	for (int i = 0; i < 1000000; ++i) {
+	for (long long i = 0; i < 10000000000; ++i) {
         // Simulación de trabajo
     }
 
 	end = std::clock();
-	this->myListTime = static_cast<double>(end -start);
+	this->myListTime = static_cast<double>(end -start) / CLOCKS_PER_SEC;
 }
 
 void	PmergeMe::printTime( void ) {
 	/* Vector time */
-	std::cout << "Time to process a range of " << myVector.size() << " elements with std::vector :  " << myVectorTime << " us.\n";
+	std::cout << "Time to process a range of " << myVector.size() << " elements with std::vector :  " << myVectorTime << " s.\n";
 
 	/* List time */
-	std::cout << "Time to process a range of " << myList.size() << " elements with std::list   :  " << myListTime << " us.\n";
+	std::cout << "Time to process a range of " << myList.size() << " elements with std::list   :  " << myListTime << " s.\n";
 }
 
 void	PmergeMe::setContainers( char **argv ) {

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <cstring>
 #include <vector>
 #include <list>
 #include <ctime>
@@ -28,8 +29,8 @@ class PmergeMe {
 		/* OCCF */
 		PmergeMe();
 		PmergeMe( char **argv );
-		// PmergeMe( const PmergeMe& other );
-		// PmergeMe& operator=( const PmergeMe& other );
+		PmergeMe( const PmergeMe& other );
+		PmergeMe& operator=( const PmergeMe& other );
 		~PmergeMe();
 
 		/* Public methods */
