@@ -12,6 +12,15 @@ Intern& Intern::operator=( const Intern& other ) {
 
 Intern::~Intern() {}
 
+/* Exceptions */
+const char* Intern::NoTargetSpecifiedExcepcion::what() const throw() {
+	return "the target of the form is empty";
+}
+
+const char* Intern::FormNotFoundExcepcion::what() const throw() {
+	return "Intern cannot find the proper form";
+}
+
 /* Make forms */
 AForm* Intern::makeSCF( std::string& target) {
 	return (new ShrubberyCreationForm( target ));

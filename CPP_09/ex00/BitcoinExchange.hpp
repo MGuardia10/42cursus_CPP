@@ -11,24 +11,18 @@ class BitcoinExchange {
 	private:
 		std::map<std::string, double> dataBase;
 
-		/* exceptions */
+		/* Exceptions */
 		class openingDataBaseException : public std::exception {
-			const char* what() const throw() {
-				return "Error: Cannot open database file";
-			}
+			const char* what() const throw();
 		};
 
 		class parsingDataBaseException : public std::exception {
-			const char* what() const throw() {
-				return "Error: database cannot be parsed";
-			}
+			const char* what() const throw();
 		};
 
 
 		class openingFileException : public std::exception {
-			const char* what() const throw() {
-				return "Error: Cannot open the file specified";
-			}
+			const char* what() const throw();
 		};
 
 	public:
@@ -39,7 +33,7 @@ class BitcoinExchange {
 		BitcoinExchange& operator=( const BitcoinExchange& other );
 		~BitcoinExchange();
 
-		/* Exposed Methods */
+		/* Public Methods */
 		void setDataBase( const char *pathDB );
 		void calculate( const std::string pathFile );
 

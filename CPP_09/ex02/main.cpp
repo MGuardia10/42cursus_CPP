@@ -7,7 +7,7 @@
 	- Print function OK
 	- Print time function OK
 	- exceptions and error management OK
-	- OCCF
+	- OCCF OK
 	- Merge-insertion sort algorithm
 */
 

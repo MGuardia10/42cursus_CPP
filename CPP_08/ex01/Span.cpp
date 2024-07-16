@@ -19,6 +19,15 @@ Span& Span::operator=(const Span& other) {
 
 Span::~Span() {}
 
+/* Exceptions */
+const char* Span::spanFullException::what() const throw() {
+	return "cannot add more items, span is full";
+}
+
+const char* Span::notEnoughNumbersException::what() const throw() {
+	return "span does not have enough numbers";
+}
+
 /* Public methods */
 int Span::shortestSpan( void ) const {
 	if ( container.size() == 0 || container.size() == 1 )

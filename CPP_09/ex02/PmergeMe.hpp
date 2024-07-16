@@ -13,17 +13,19 @@ class PmergeMe {
 		double myVectorTime;
 		double myListTime;
 
+		/* Exceptions */
 		class InvalidInputException : public std::exception {
-			const char* what() const throw() {
-				return "Only positive integers are valid";
-			}
+			const char* what() const throw();
 		};
 
 		class MaxIntException : public std::exception {
-			const char* what() const throw() {
-				return "Numbers must fit in an INT data type";
-			}
+			const char* what() const throw();
 		};
+
+		/* Private methods */
+		void	setContainers( char **argv );
+		void	sortVector( void );
+		void	sortList( void );
 
 	public:
 		/* OCCF */
@@ -37,6 +39,4 @@ class PmergeMe {
 		void	print( void );
 		void	sort( void );
 		void	printTime( void );
-		void	setContainers( char **argv );
-
 };

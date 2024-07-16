@@ -16,6 +16,11 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreation
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+/* Exceptions */
+const char* ShrubberyCreationForm::FileNotOpenException::what() const throw() {
+	return "error opening the file";
+}
+
 /* Public Methods */
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (this->getIsSigned() == false)

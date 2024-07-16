@@ -24,6 +24,19 @@ Form& Form::operator=( const Form& other ) {
 
 Form::~Form() {}
 
+/* Exceptions */
+const char* Form::GradeTooHighException::what() const throw() {
+	return "grade too high";
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return "grade too low";
+}
+
+const char* Form::AlreadySingedException::what() const throw() {
+	return "form is already signed";
+}
+
 /* Public Methods */
 std::string Form::getName() const { return this->name; }
 const bool& Form::getIsSigned() const { return this->isSigned; }

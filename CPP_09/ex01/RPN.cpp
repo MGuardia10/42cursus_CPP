@@ -12,7 +12,16 @@ RPN& RPN::operator=( const RPN& other ) {
 }
 RPN::~RPN() {}
 
-/* calculate */
+/* Exceptions */
+const char* RPN::emptyStringException::what() const throw() {
+	return "Error: The string is empty";
+}
+
+const char* RPN::wrongInputException::what() const throw() {
+	return "Error: Wrong input";
+}
+
+/* calculate --> Supported operations: + , - , * , /  */
 // supported operations: + , - , / , *
 void RPN::calculate( std::string input ) {
 

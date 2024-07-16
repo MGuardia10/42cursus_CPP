@@ -15,27 +15,23 @@ class RPN {
 		/* Stack container */
 		static std::stack<double> myStack;
 
+		/* OCCF */
 		RPN();
 		RPN( const RPN& other );
 		~RPN();
 
 		/* Exceptions */
-		
 		class emptyStringException : public std::exception {
-			const char* what() const throw() {
-				return "Error: The string is empty";
-			}
+			const char* what() const throw();
 		};
 
 		class wrongInputException : public std::exception {
-			const char* what() const throw() {
-				return "Error: Wrong input";
-			}
+			const char* what() const throw();
 		};
 
 	public:
 		RPN& operator=( const RPN& other );
 
-		/* exposed methods */
+		/* public methods */
 		static void calculate( std::string input );
 };

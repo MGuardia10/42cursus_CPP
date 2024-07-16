@@ -13,10 +13,9 @@ class AForm {
 		const unsigned int signGrade;
 		const unsigned int execGrade;
 		
+		/* Exceptions */
 		class AlreadySingedException : public std::exception {
-			const char* what() const throw() {
-				return "form is already signed";
-			}
+			const char* what() const throw();
 		};
 
 	public:

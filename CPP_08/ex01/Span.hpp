@@ -12,24 +12,23 @@ class Span {
 		
 		Span();
 
+		/* Exceptions */
 		class spanFullException : public std::exception {
-			virtual const char* what() const throw() {
-				return "cannot add more items, span is full";
-			}
+			virtual const char* what() const throw();
 		};
 
 		class notEnoughNumbersException : public std::exception {
-			virtual const char* what() const throw() {
-				return "span does not have enough numbers";
-			}
+			virtual const char* what() const throw();
 		};
 
 	public:
+		/* OCCF */
 		Span( unsigned int N );
 		Span( const Span& other );
 		Span& operator=(const Span& other);
 		~Span();
 
+		/* Public Methods */
 		int shortestSpan( void ) const;
 		int longestSpan( void ) const;
 		void addNumber( int nbr );

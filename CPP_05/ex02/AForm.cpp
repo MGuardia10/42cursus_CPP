@@ -24,6 +24,11 @@ AForm& AForm::operator=( const AForm& other ) {
 
 AForm::~AForm() {}
 
+/* Exceptions */
+const char* AForm::AlreadySingedException::what() const throw() {
+	return "form is already signed";
+}
+
 /* Public Methods */
 std::string AForm::getName() const { return this->name; }
 std::string AForm::getTarget() const { return this->target; }

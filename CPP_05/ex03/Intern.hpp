@@ -15,14 +15,10 @@ class Intern {
 
 		/* Exceptions */
 		class NoTargetSpecifiedExcepcion : public std::exception {
-			const char* what() const throw() {
-				return "the target of the form is empty";
-			}
+			const char* what() const throw();
 		};
 		class FormNotFoundExcepcion : public std::exception {
-			const char* what() const throw() {
-				return "Intern cannot find the proper form";
-			}
+			const char* what() const throw();
 		};
 
 	public:

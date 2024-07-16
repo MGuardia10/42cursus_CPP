@@ -12,7 +12,20 @@ BitcoinExchange& BitcoinExchange::operator=( const BitcoinExchange& other ) {
 }
 BitcoinExchange::~BitcoinExchange() {}
 
-/* Exposed methods */
+/* Exceptions */
+const char* BitcoinExchange::openingDataBaseException::what() const throw() {
+	return "Error: Cannot open database file";
+}
+
+const char* BitcoinExchange::parsingDataBaseException::what() const throw() {
+	return "Error: database cannot be parsed";
+}
+
+const char* BitcoinExchange::openingFileException::what() const throw() {
+	return "Error: Cannot open the file specified";
+}
+
+/* Public methods */
 static void trim( std::string& str ) {
 	str.erase(0, str.find_first_not_of( WHITESPACES ));
 	str.erase(str.find_last_not_of( WHITESPACES ) + 1);

@@ -9,11 +9,10 @@
 
 class ShrubberyCreationForm : public AForm {
 	private:
+		/* Exceptions */
 		class FileNotOpenException : public std::exception {
-			const char* what() const throw() {
-				return "error opening the file";
-			}
-		};	
+			const char* what() const throw();
+		};
 	public:
 		/* OCCF */
 		ShrubberyCreationForm();
