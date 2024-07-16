@@ -22,12 +22,14 @@ int main( int argc, char **argv ) {
 		PmergeMe myContainers( argv );
 
 		std::cout << "Before:	";
-		myContainers.print();
+		// myContainers.print( VECTOR );
+		myContainers.print( LIST );
 
 		myContainers.sort();
 		
 		std::cout << "After:	";
-		myContainers.print();
+		// myContainers.print( VECTOR );
+		myContainers.print( LIST );
 
 		myContainers.printTime();
 

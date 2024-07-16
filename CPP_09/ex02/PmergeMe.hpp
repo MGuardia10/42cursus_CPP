@@ -6,6 +6,11 @@
 #include <list>
 #include <ctime>
 
+typedef enum dataType {
+	VECTOR,
+	LIST
+} dataType;
+
 class PmergeMe {
 	private:
 		std::vector<int> myVector;
@@ -24,8 +29,8 @@ class PmergeMe {
 
 		/* Private methods */
 		void	setContainers( char **argv );
-		void	sortVector( void );
-		void	sortList( void );
+		void	sortVector( std::vector<int> &arr, int start, int end );
+		void	sortList( std::list<int> &list );
 
 	public:
 		/* OCCF */
@@ -36,7 +41,7 @@ class PmergeMe {
 		~PmergeMe();
 
 		/* Public methods */
-		void	print( void );
+		void	print( dataType type );
 		void	sort( void );
 		void	printTime( void );
 };

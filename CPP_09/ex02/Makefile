@@ -58,3 +58,9 @@ re: fclean all
 
 leaks: all
 	@leaks -q --atExit -- ./$(NAME)
+
+linux:
+	@./$(NAME) `shuf -i 1-100000 -n 3000 | tr '\n' ' '`
+
+macos:
+	@./$(NAME) `jot -r 3000 1 100000 | tr '\n' ' '`
