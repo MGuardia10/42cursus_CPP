@@ -57,10 +57,10 @@ re: fclean all
 .PHONY:	all clean fclean re
 
 leaks: all
-	@leaks -q --atExit -- ./$(NAME)
+	@leaks -q --atExit -- ./$(NAME) 541325 2315 32 1243 56 463
 
-linux:
+linux: all
 	@./$(NAME) `shuf -i 1-100000 -n 3000 | tr '\n' ' '`
 
-macos:
+macos: all
 	@./$(NAME) `jot -r 3000 1 100000 | tr '\n' ' '`
