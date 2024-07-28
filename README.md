@@ -4,6 +4,7 @@ C++ Practice exercises
 The CPP piscine consists of 10 different modules that serve as an introduction to the C++ language. Each module contains a series of independent exercises that primarily introduce us to object-oriented programming (OOP). Each exercise includes a Makefile with which to compile and test the programs.
 
 ![C++](https://img.shields.io/badge/C++-a?style=for-the-badge&logo=C%2B%2B&color=purple)
+![Makefile](https://img.shields.io/badge/Makefile-a?style=for-the-badge&logo=monster&logoColor=orange&color=grey)
 
 The topics of each module are:
 
